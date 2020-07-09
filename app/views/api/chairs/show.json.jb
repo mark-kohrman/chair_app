@@ -1,4 +1,5 @@
 {
+  id: @chair.id,
   color: @chair.color,
   chair_type: @chair.chair_type,
   price: @chair.price

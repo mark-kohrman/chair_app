@@ -9,5 +9,16 @@ class Api::ChairsController < ApplicationController
     render 'show.json.jb'
   end
 
-  
+  def create
+    @chair = Chair.new(
+      color: params[:color],
+      chair_type: params[:chair_type],
+      price: params[:price]
+
+    )
+    @chair.save
+    render 'show.json.jb'
+  end
+
+
 end
