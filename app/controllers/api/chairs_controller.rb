@@ -20,5 +20,15 @@ class Api::ChairsController < ApplicationController
     render 'show.json.jb'
   end
 
+  def update
+    @chair = Chair.find_by(id: params[:id])
+    @chair.update(
+      color: params[:color] || @chair.color,
+      chair_type: params[:chair_type] || @chair.chair_type,
+      price: params[:price] || @chair.price
+    )
+    @chair.save
+    render 'show.json.jb'
+  end
 
 end
