@@ -31,4 +31,10 @@ class Api::ChairsController < ApplicationController
     render 'show.json.jb'
   end
 
+  def destroy
+    @chair = Chair.find_by(id: params[:id])
+    @chair.destroy
+    render json: {message: "Your chair has successfully been lit on fire.  Thank you for shopping at chair lighters."}
+  end
+
 end
